@@ -50,28 +50,41 @@ sudo systemctl enable nombre_servicio.service
 
 ## Gestion del servicio
 
-1. Inicio del servicio
+Inicio del servicio
 
 ```
 sudo systemctl start nombre_servicio.service
 ```
 
-2. Parar el servicio
+Parar el servicio
 
 ```
 sudo systemctl stop nombre_servicio.service
 ```
 
-3. Reiniciar el servicio
+Ver el estado  del servicio
 
 ```
-sudo systemctl restart nombre_servicio.service
+sudo systemctl status nombre_servicio.service
+```
+mostrará una salida parecida a la siguiente:
+
+```
+● nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2015-01-27 19:41:23 EST; 22h ago
+ Main PID: 495 (nginx)
+   CGroup: /system.slice/nginx.service
+           ├─495 nginx: master process /usr/bin/nginx -g pid /run/nginx.pid; error_log stderr;
+           └─496 nginx: worker process
+Jan 27 19:41:23 desktop systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jan 27 19:41:23 desktop systemd[1]: Started A high performance web server and a reverse proxy server.
 ```
 
-4. Activar el servicio para que se inicie al arranque del dispositivo
+Para mas información de gestión usa el siguiente [link](systemctl.md)
 
-```
-sudo systemctl enable nombre_servicio.service
-```
+
+
+
 
 
